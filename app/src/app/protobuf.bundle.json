@@ -1,0 +1,5687 @@
+{
+  "nested": {
+    "bnet": {
+      "nested": {
+        "protocol": {
+          "nested": {
+            "account": {
+              "nested": {
+                "AccountId": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    }
+                  }
+                },
+                "AccountLicense": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "expires": {
+                      "type": "uint64",
+                      "id": 2
+                    }
+                  }
+                },
+                "AccountCredential": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "data": {
+                      "type": "bytes",
+                      "id": 2
+                    }
+                  }
+                },
+                "AccountBlob": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "region": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "email": {
+                      "rule": "repeated",
+                      "type": "string",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "flags": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 5
+                    },
+                    "secureRelease": {
+                      "type": "uint64",
+                      "id": 6
+                    },
+                    "whitelistStart": {
+                      "type": "uint64",
+                      "id": 7
+                    },
+                    "whitelistEnd": {
+                      "type": "uint64",
+                      "id": 8
+                    },
+                    "fullName": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 10
+                    },
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "AccountLicense",
+                      "id": 20,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "credentials": {
+                      "rule": "repeated",
+                      "type": "AccountCredential",
+                      "id": 21,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "accountLinks": {
+                      "rule": "repeated",
+                      "type": "GameAccountLink",
+                      "id": 22,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 23
+                    },
+                    "defaultCurrency": {
+                      "type": "fixed32",
+                      "id": 25
+                    },
+                    "legalRegion": {
+                      "type": "uint32",
+                      "id": 26
+                    },
+                    "legalLocale": {
+                      "type": "fixed32",
+                      "id": 27
+                    },
+                    "cacheExpiration": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 30
+                    },
+                    "parentalControlInfo": {
+                      "type": "ParentalControlInfo",
+                      "id": 31
+                    },
+                    "country": {
+                      "type": "string",
+                      "id": 32
+                    },
+                    "preferredRegion": {
+                      "type": "uint32",
+                      "id": 33
+                    }
+                  }
+                },
+                "AccountBlobList": {
+                  "fields": {
+                    "blob": {
+                      "rule": "repeated",
+                      "type": "AccountBlob",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameAccountHandle": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "program": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "region": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "GameAccountLink": {
+                  "fields": {
+                    "gameAccount": {
+                      "rule": "required",
+                      "type": "GameAccountHandle",
+                      "id": 1
+                    },
+                    "name": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    }
+                  }
+                },
+                "GameAccountBlob": {
+                  "fields": {
+                    "gameAccount": {
+                      "rule": "required",
+                      "type": "GameAccountHandle",
+                      "id": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": 2,
+                      "options": {
+                        "default": ""
+                      }
+                    },
+                    "realmPermissions": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "status": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 4
+                    },
+                    "flags": {
+                      "type": "uint64",
+                      "id": 5,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "billingFlags": {
+                      "type": "uint32",
+                      "id": 6,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "cacheExpiration": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 7
+                    },
+                    "subscriptionExpiration": {
+                      "type": "uint64",
+                      "id": 10
+                    },
+                    "unitsRemaining": {
+                      "type": "uint32",
+                      "id": 11
+                    },
+                    "statusExpiration": {
+                      "type": "uint64",
+                      "id": 12
+                    },
+                    "boxLevel": {
+                      "type": "uint32",
+                      "id": 13
+                    },
+                    "boxLevelExpiration": {
+                      "type": "uint64",
+                      "id": 14
+                    },
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "AccountLicense",
+                      "id": 20,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameAccountBlobList": {
+                  "fields": {
+                    "blob": {
+                      "rule": "repeated",
+                      "type": "GameAccountBlob",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "AccountReference": {
+                  "fields": {
+                    "id": {
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "email": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "handle": {
+                      "type": "GameAccountHandle",
+                      "id": 3
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 10,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "Wallet": {
+                  "fields": {
+                    "region": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "walletId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "walletType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "description": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "countryId": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 5
+                    },
+                    "state": {
+                      "type": "string",
+                      "id": 6
+                    },
+                    "city": {
+                      "type": "string",
+                      "id": 7
+                    },
+                    "postalCode": {
+                      "type": "string",
+                      "id": 8
+                    },
+                    "paymentInfo": {
+                      "type": "bytes",
+                      "id": 9
+                    },
+                    "bin": {
+                      "type": "string",
+                      "id": 10
+                    },
+                    "localeId": {
+                      "type": "string",
+                      "id": 11
+                    },
+                    "street": {
+                      "type": "string",
+                      "id": 12
+                    },
+                    "firstName": {
+                      "type": "string",
+                      "id": 13
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "id": 14
+                    },
+                    "birthDate": {
+                      "type": "uint64",
+                      "id": 15
+                    }
+                  }
+                },
+                "Wallets": {
+                  "fields": {
+                    "wallets": {
+                      "rule": "repeated",
+                      "type": "Wallet",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "CurrencyRestriction": {
+                  "fields": {
+                    "currency": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 1
+                    },
+                    "authenticatorCap": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    },
+                    "softCap": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 3
+                    }
+                  }
+                },
+                "ProgramTag": {
+                  "fields": {
+                    "program": {
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "tag": {
+                      "type": "fixed32",
+                      "id": 2
+                    }
+                  }
+                },
+                "RegionTag": {
+                  "fields": {
+                    "region": {
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "tag": {
+                      "type": "fixed32",
+                      "id": 2
+                    }
+                  }
+                },
+                "AccountFieldTags": {
+                  "fields": {
+                    "accountLevelInfoTag": {
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "privacyInfoTag": {
+                      "type": "fixed32",
+                      "id": 3
+                    },
+                    "parentalControlInfoTag": {
+                      "type": "fixed32",
+                      "id": 4
+                    },
+                    "gameLevelInfoTags": {
+                      "rule": "repeated",
+                      "type": "ProgramTag",
+                      "id": 7,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameStatusTags": {
+                      "rule": "repeated",
+                      "type": "ProgramTag",
+                      "id": 9,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameAccountTags": {
+                      "rule": "repeated",
+                      "type": "RegionTag",
+                      "id": 11,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameAccountFieldTags": {
+                  "fields": {
+                    "gameLevelInfoTag": {
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "gameTimeInfoTag": {
+                      "type": "fixed32",
+                      "id": 3
+                    },
+                    "gameStatusTag": {
+                      "type": "fixed32",
+                      "id": 4
+                    }
+                  }
+                },
+                "AccountFieldOptions": {
+                  "fields": {
+                    "allFields": {
+                      "type": "bool",
+                      "id": 1
+                    },
+                    "fieldAccountLevelInfo": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "fieldPrivacyInfo": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "fieldParentalControlInfo": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "fieldGameLevelInfo": {
+                      "type": "bool",
+                      "id": 6
+                    },
+                    "fieldGameStatus": {
+                      "type": "bool",
+                      "id": 7
+                    },
+                    "fieldGameAccounts": {
+                      "type": "bool",
+                      "id": 8
+                    }
+                  }
+                },
+                "GameAccountFieldOptions": {
+                  "fields": {
+                    "allFields": {
+                      "type": "bool",
+                      "id": 1
+                    },
+                    "fieldGameLevelInfo": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "fieldGameTimeInfo": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "fieldGameStatus": {
+                      "type": "bool",
+                      "id": 4
+                    }
+                  }
+                },
+                "SubscriberReference": {
+                  "fields": {
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 1,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "accountOptions": {
+                      "type": "AccountFieldOptions",
+                      "id": 3
+                    },
+                    "accountTags": {
+                      "type": "AccountFieldTags",
+                      "id": 4
+                    },
+                    "gameAccountOptions": {
+                      "type": "GameAccountFieldOptions",
+                      "id": 5
+                    },
+                    "gameAccountTags": {
+                      "type": "GameAccountFieldTags",
+                      "id": 6
+                    }
+                  }
+                },
+                "AccountLevelInfo": {
+                  "fields": {
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "AccountLicense",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "defaultCurrency": {
+                      "type": "fixed32",
+                      "id": 4
+                    },
+                    "country": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "preferredRegion": {
+                      "type": "uint32",
+                      "id": 6
+                    }
+                  }
+                },
+                "PrivacyInfo": {
+                  "fields": {
+                    "isUsingRid": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "isRealIdVisibleForViewFriends": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "isHiddenFromFriendFinder": {
+                      "type": "bool",
+                      "id": 5
+                    },
+                    "gameInfoPrivacy": {
+                      "type": "GameInfoPrivacy",
+                      "id": 6,
+                      "options": {
+                        "default": "PRIVACY_FRIENDS"
+                      }
+                    }
+                  },
+                  "nested": {
+                    "GameInfoPrivacy": {
+                      "values": {
+                        "PRIVACY_ME": 0,
+                        "PRIVACY_FRIENDS": 1,
+                        "PRIVACY_EVERYONE": 2
+                      }
+                    }
+                  }
+                },
+                "ParentalControlInfo": {
+                  "fields": {
+                    "timezone": {
+                      "type": "string",
+                      "id": 3
+                    },
+                    "minutesPerDay": {
+                      "type": "uint32",
+                      "id": 4
+                    },
+                    "minutesPerWeek": {
+                      "type": "uint32",
+                      "id": 5
+                    },
+                    "canReceiveVoice": {
+                      "type": "bool",
+                      "id": 6
+                    },
+                    "canSendVoice": {
+                      "type": "bool",
+                      "id": 7
+                    },
+                    "playSchedule": {
+                      "rule": "repeated",
+                      "type": "bool",
+                      "id": 8,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameLevelInfo": {
+                  "fields": {
+                    "isStarterEdition": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "isTrial": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "isLifetime": {
+                      "type": "bool",
+                      "id": 5
+                    },
+                    "isRestricted": {
+                      "type": "bool",
+                      "id": 6
+                    },
+                    "isBeta": {
+                      "type": "bool",
+                      "id": 7
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": 8
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 9
+                    },
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "AccountLicense",
+                      "id": 10,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "realmPermissions": {
+                      "type": "uint32",
+                      "id": 11
+                    }
+                  }
+                },
+                "GameTimeInfo": {
+                  "fields": {
+                    "isUnlimitedPlayTime": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "playTimeExpires": {
+                      "type": "uint64",
+                      "id": 5
+                    },
+                    "isSubscription": {
+                      "type": "bool",
+                      "id": 6
+                    },
+                    "isRecurringSubscription": {
+                      "type": "bool",
+                      "id": 7
+                    }
+                  }
+                },
+                "GameTimeRemainingInfo": {
+                  "fields": {
+                    "minutesRemaining": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "parentalDailyMinutesRemaining": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "parentalWeeklyMinutesRemaining": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "GameStatus": {
+                  "fields": {
+                    "isSuspended": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "isBanned": {
+                      "type": "bool",
+                      "id": 5
+                    },
+                    "suspensionExpires": {
+                      "type": "uint64",
+                      "id": 6
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 7
+                    }
+                  }
+                },
+                "GameSessionInfo": {
+                  "fields": {
+                    "startTime": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "location": {
+                      "type": "GameSessionLocation",
+                      "id": 4
+                    },
+                    "hasBenefactor": {
+                      "type": "bool",
+                      "id": 5
+                    },
+                    "isUsingIgr": {
+                      "type": "bool",
+                      "id": 6
+                    },
+                    "parentalControlsActive": {
+                      "type": "bool",
+                      "id": 7
+                    }
+                  }
+                },
+                "GameSessionUpdateInfo": {
+                  "fields": {
+                    "cais": {
+                      "type": "CAIS",
+                      "id": 8
+                    }
+                  }
+                },
+                "GameSessionLocation": {
+                  "fields": {
+                    "ipAddress": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "country": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "city": {
+                      "type": "string",
+                      "id": 3
+                    }
+                  }
+                },
+                "CAIS": {
+                  "fields": {
+                    "playedMinutes": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "restedMinutes": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "lastHeardTime": {
+                      "type": "uint64",
+                      "id": 3
+                    }
+                  }
+                },
+                "GameAccountList": {
+                  "fields": {
+                    "region": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "handle": {
+                      "rule": "repeated",
+                      "type": "GameAccountHandle",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "AccountState": {
+                  "fields": {
+                    "accountLevelInfo": {
+                      "type": "AccountLevelInfo",
+                      "id": 1
+                    },
+                    "privacyInfo": {
+                      "type": "PrivacyInfo",
+                      "id": 2
+                    },
+                    "parentalControlInfo": {
+                      "type": "ParentalControlInfo",
+                      "id": 3
+                    },
+                    "gameLevelInfo": {
+                      "rule": "repeated",
+                      "type": "GameLevelInfo",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameStatus": {
+                      "rule": "repeated",
+                      "type": "GameStatus",
+                      "id": 6,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameAccounts": {
+                      "rule": "repeated",
+                      "type": "GameAccountList",
+                      "id": 7,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "AccountStateTagged": {
+                  "fields": {
+                    "accountState": {
+                      "type": "AccountState",
+                      "id": 1
+                    },
+                    "tags": {
+                      "type": "AccountFieldTags",
+                      "id": 2
+                    }
+                  }
+                },
+                "GameAccountState": {
+                  "fields": {
+                    "gameLevelInfo": {
+                      "type": "GameLevelInfo",
+                      "id": 1
+                    },
+                    "gameTimeInfo": {
+                      "type": "GameTimeInfo",
+                      "id": 2
+                    },
+                    "gameStatus": {
+                      "type": "GameStatus",
+                      "id": 3
+                    }
+                  }
+                },
+                "GameAccountStateTagged": {
+                  "fields": {
+                    "gameAccountState": {
+                      "type": "GameAccountState",
+                      "id": 1
+                    },
+                    "gameAccountTags": {
+                      "type": "GameAccountFieldTags",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetAccountRequest": {
+                  "fields": {
+                    "ref": {
+                      "type": "AccountReference",
+                      "id": 1
+                    },
+                    "fetchAll": {
+                      "type": "bool",
+                      "id": 10,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchBlob": {
+                      "type": "bool",
+                      "id": 11,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchId": {
+                      "type": "bool",
+                      "id": 12,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchEmail": {
+                      "type": "bool",
+                      "id": 13,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchBattleTag": {
+                      "type": "bool",
+                      "id": 14,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchFullName": {
+                      "type": "bool",
+                      "id": 15,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchLinks": {
+                      "type": "bool",
+                      "id": 16,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchParentalControls": {
+                      "type": "bool",
+                      "id": 17,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GetAccountResponse": {
+                  "fields": {
+                    "blob": {
+                      "type": "AccountBlob",
+                      "id": 11
+                    },
+                    "id": {
+                      "type": "AccountId",
+                      "id": 12
+                    },
+                    "email": {
+                      "rule": "repeated",
+                      "type": "string",
+                      "id": 13,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 14
+                    },
+                    "fullName": {
+                      "type": "string",
+                      "id": 15
+                    },
+                    "links": {
+                      "rule": "repeated",
+                      "type": "GameAccountLink",
+                      "id": 16,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "parentalControlInfo": {
+                      "type": "ParentalControlInfo",
+                      "id": 17
+                    }
+                  }
+                },
+                "CreateGameAccountRequest": {
+                  "fields": {
+                    "account": {
+                      "type": "AccountId",
+                      "id": 1
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 3
+                    },
+                    "realmPermissions": {
+                      "type": "uint32",
+                      "id": 4,
+                      "options": {
+                        "default": 1
+                      }
+                    }
+                  }
+                },
+                "CacheExpireRequest": {
+                  "fields": {
+                    "account": {
+                      "rule": "repeated",
+                      "type": "AccountId",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameAccount": {
+                      "rule": "repeated",
+                      "type": "GameAccountHandle",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "email": {
+                      "rule": "repeated",
+                      "type": "string",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "CredentialUpdateRequest": {
+                  "fields": {
+                    "account": {
+                      "rule": "required",
+                      "type": "AccountId",
+                      "id": 1
+                    },
+                    "oldCredentials": {
+                      "rule": "repeated",
+                      "type": "AccountCredential",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "newCredentials": {
+                      "rule": "repeated",
+                      "type": "AccountCredential",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 4
+                    }
+                  }
+                },
+                "CredentialUpdateResponse": {
+                  "fields": {}
+                },
+                "FlagUpdateRequest": {
+                  "fields": {
+                    "account": {
+                      "rule": "required",
+                      "type": "AccountId",
+                      "id": 1
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "flag": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 3
+                    },
+                    "active": {
+                      "rule": "required",
+                      "type": "bool",
+                      "id": 4
+                    }
+                  }
+                },
+                "FlagUpdateResponse": {
+                  "fields": {}
+                },
+                "GetWalletListRequest": {
+                  "fields": {
+                    "accountId": {
+                      "rule": "required",
+                      "type": "AccountId",
+                      "id": 1
+                    },
+                    "refresh": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GetWalletListResponse": {
+                  "fields": {
+                    "wallets": {
+                      "rule": "repeated",
+                      "type": "Wallet",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GetEBalanceRequest": {
+                  "fields": {
+                    "accountId": {
+                      "rule": "required",
+                      "type": "AccountId",
+                      "id": 1
+                    },
+                    "currency": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    },
+                    "currencyHomeRegion": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "GetEBalanceResponse": {
+                  "fields": {
+                    "balance": {
+                      "type": "string",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetEBalanceRestrictionsRequest": {
+                  "fields": {
+                    "currencyHomeRegion": {
+                      "type": "uint32",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetEBalanceRestrictionsResponse": {
+                  "fields": {
+                    "currencyRestrictions": {
+                      "rule": "repeated",
+                      "type": "CurrencyRestriction",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "SubscriptionUpdateRequest": {
+                  "fields": {
+                    "ref": {
+                      "rule": "repeated",
+                      "type": "SubscriberReference",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "SubscriptionUpdateResponse": {
+                  "fields": {
+                    "ref": {
+                      "rule": "repeated",
+                      "type": "SubscriberReference",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "IsIgrAddressRequest": {
+                  "fields": {
+                    "clientAddress": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "AccountServiceRegion": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "shard": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    }
+                  }
+                },
+                "AccountServiceConfig": {
+                  "fields": {
+                    "region": {
+                      "rule": "repeated",
+                      "type": "AccountServiceRegion",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GetAccountStateRequest": {
+                  "fields": {
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "program": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "region": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "options": {
+                      "type": "AccountFieldOptions",
+                      "id": 10
+                    },
+                    "tags": {
+                      "type": "AccountFieldTags",
+                      "id": 11
+                    }
+                  }
+                },
+                "GetAccountStateResponse": {
+                  "fields": {
+                    "state": {
+                      "type": "AccountState",
+                      "id": 1
+                    },
+                    "tags": {
+                      "type": "AccountFieldTags",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetGameAccountStateRequest": {
+                  "fields": {
+                    "accountId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "options": {
+                      "type": "GameAccountFieldOptions",
+                      "id": 10
+                    },
+                    "tags": {
+                      "type": "GameAccountFieldTags",
+                      "id": 11
+                    }
+                  }
+                },
+                "GetGameAccountStateResponse": {
+                  "fields": {
+                    "state": {
+                      "type": "GameAccountState",
+                      "id": 1
+                    },
+                    "tags": {
+                      "type": "GameAccountFieldTags",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetLicensesRequest": {
+                  "fields": {
+                    "targetId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "getAccountLicenses": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "getGameAccountLicenses": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "getDynamicAccountLicenses": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "programId": {
+                      "type": "fixed32",
+                      "id": 5
+                    },
+                    "excludeUnknownProgram": {
+                      "type": "bool",
+                      "id": 6,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GetLicensesResponse": {
+                  "fields": {
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "AccountLicense",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GetGameSessionInfoRequest": {
+                  "fields": {
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetGameSessionInfoResponse": {
+                  "fields": {
+                    "sessionInfo": {
+                      "type": "GameSessionInfo",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetGameTimeRemainingInfoRequest": {
+                  "fields": {
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "accountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetGameTimeRemainingInfoResponse": {
+                  "fields": {
+                    "gameTimeRemainingInfo": {
+                      "type": "GameTimeRemainingInfo",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetCAISInfoRequest": {
+                  "fields": {
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetCAISInfoResponse": {
+                  "fields": {
+                    "caisInfo": {
+                      "type": "CAIS",
+                      "id": 1
+                    }
+                  }
+                },
+                "ForwardCacheExpireRequest": {
+                  "fields": {
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "AccountStateNotification": {
+                  "fields": {
+                    "state": {
+                      "type": "AccountState",
+                      "id": 1
+                    },
+                    "subscriberId": {
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "accountTags": {
+                      "type": "AccountFieldTags",
+                      "id": 3
+                    },
+                    "subscriptionCompleted": {
+                      "type": "bool",
+                      "id": 4
+                    }
+                  }
+                },
+                "GameAccountStateNotification": {
+                  "fields": {
+                    "state": {
+                      "type": "GameAccountState",
+                      "id": 1
+                    },
+                    "subscriberId": {
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "gameAccountTags": {
+                      "type": "GameAccountFieldTags",
+                      "id": 3
+                    },
+                    "subscriptionCompleted": {
+                      "type": "bool",
+                      "id": 4
+                    }
+                  }
+                },
+                "GameAccountNotification": {
+                  "fields": {
+                    "regionDelta": {
+                      "rule": "repeated",
+                      "type": "GameAccountList",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "subscriberId": {
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "accountTags": {
+                      "type": "AccountFieldTags",
+                      "id": 3
+                    }
+                  }
+                },
+                "GameAccountSessionNotification": {
+                  "fields": {
+                    "gameAccount": {
+                      "type": "GameAccountHandle",
+                      "id": 1
+                    },
+                    "sessionInfo": {
+                      "type": "GameSessionUpdateInfo",
+                      "id": 2
+                    }
+                  }
+                }
+              }
+            },
+            "attribute": {
+              "nested": {
+                "Variant": {
+                  "fields": {
+                    "boolValue": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "intValue": {
+                      "type": "int64",
+                      "id": 3
+                    },
+                    "floatValue": {
+                      "type": "double",
+                      "id": 4
+                    },
+                    "stringValue": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "blobValue": {
+                      "type": "bytes",
+                      "id": 6
+                    },
+                    "messageValue": {
+                      "type": "bytes",
+                      "id": 7
+                    },
+                    "fourccValue": {
+                      "type": "string",
+                      "id": 8
+                    },
+                    "uintValue": {
+                      "type": "uint64",
+                      "id": 9
+                    },
+                    "entityidValue": {
+                      "type": "EntityId",
+                      "id": 10
+                    }
+                  }
+                },
+                "Attribute": {
+                  "fields": {
+                    "name": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 1
+                    },
+                    "value": {
+                      "rule": "required",
+                      "type": "Variant",
+                      "id": 2
+                    }
+                  }
+                },
+                "AttributeFilter": {
+                  "fields": {
+                    "op": {
+                      "rule": "required",
+                      "type": "Operation",
+                      "id": 1
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "Attribute",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  },
+                  "nested": {
+                    "Operation": {
+                      "values": {
+                        "MATCH_NONE": 0,
+                        "MATCH_ANY": 1,
+                        "MATCH_ALL": 2,
+                        "MATCH_ALL_MOST_SPECIFIC": 3
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "authentication": {
+              "nested": {
+                "ModuleLoadRequest": {
+                  "fields": {
+                    "moduleHandle": {
+                      "rule": "required",
+                      "type": "ContentHandle",
+                      "id": 1
+                    },
+                    "message": {
+                      "type": "bytes",
+                      "id": 2
+                    }
+                  }
+                },
+                "ModuleNotification": {
+                  "fields": {
+                    "moduleId": {
+                      "type": "int32",
+                      "id": 2
+                    },
+                    "result": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "ModuleMessageRequest": {
+                  "fields": {
+                    "moduleId": {
+                      "rule": "required",
+                      "type": "int32",
+                      "id": 1
+                    },
+                    "message": {
+                      "type": "bytes",
+                      "id": 2
+                    }
+                  }
+                },
+                "LogonRequest": {
+                  "fields": {
+                    "program": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "platform": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "locale": {
+                      "type": "string",
+                      "id": 3
+                    },
+                    "email": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "version": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "applicationVersion": {
+                      "type": "int32",
+                      "id": 6
+                    },
+                    "publicComputer": {
+                      "type": "bool",
+                      "id": 7
+                    },
+                    "ssoId": {
+                      "type": "bytes",
+                      "id": 8
+                    },
+                    "disconnectOnCookieFail": {
+                      "type": "bool",
+                      "id": 9,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "allowLogonQueueNotifications": {
+                      "type": "bool",
+                      "id": 10,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "webClientVerification": {
+                      "type": "bool",
+                      "id": 11,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "cachedWebCredentials": {
+                      "type": "bytes",
+                      "id": 12
+                    },
+                    "userAgent": {
+                      "type": "string",
+                      "id": 14
+                    }
+                  }
+                },
+                "LogonResult": {
+                  "fields": {
+                    "errorCode": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "account": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "gameAccount": {
+                      "rule": "repeated",
+                      "type": "EntityId",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "email": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "availableRegion": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "connectedRegion": {
+                      "type": "uint32",
+                      "id": 6
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 7
+                    },
+                    "geoipCountry": {
+                      "type": "string",
+                      "id": 8
+                    }
+                  }
+                },
+                "GenerateSSOTokenRequest": {
+                  "fields": {
+                    "program": {
+                      "type": "fixed32",
+                      "id": 1
+                    }
+                  }
+                },
+                "GenerateSSOTokenResponse": {
+                  "fields": {
+                    "ssoId": {
+                      "type": "bytes",
+                      "id": 1
+                    },
+                    "ssoSecret": {
+                      "type": "bytes",
+                      "id": 2
+                    }
+                  }
+                },
+                "LogonUpdateRequest": {
+                  "fields": {
+                    "errorCode": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    }
+                  }
+                },
+                "LogonQueueUpdateRequest": {
+                  "fields": {
+                    "position": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "estimatedTime": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "etaDeviationInSec": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 3
+                    }
+                  }
+                },
+                "AccountSettingsNotification": {
+                  "fields": {
+                    "licenses": {
+                      "rule": "repeated",
+                      "type": "account.AccountLicense",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "isUsingRid": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "isPlayingFromIgr": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "canReceiveVoice": {
+                      "type": "bool",
+                      "id": 4
+                    },
+                    "canSendVoice": {
+                      "type": "bool",
+                      "id": 5
+                    }
+                  }
+                },
+                "ServerStateChangeRequest": {
+                  "fields": {
+                    "state": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "eventTime": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 2
+                    }
+                  }
+                },
+                "VersionInfo": {
+                  "fields": {
+                    "number": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "patch": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "isOptional": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "kickTime": {
+                      "type": "uint64",
+                      "id": 4
+                    }
+                  }
+                },
+                "VersionInfoNotification": {
+                  "fields": {
+                    "versionInfo": {
+                      "type": "VersionInfo",
+                      "id": 1
+                    }
+                  }
+                },
+                "MemModuleLoadRequest": {
+                  "fields": {
+                    "handle": {
+                      "rule": "required",
+                      "type": "ContentHandle",
+                      "id": 1
+                    },
+                    "key": {
+                      "rule": "required",
+                      "type": "bytes",
+                      "id": 2
+                    },
+                    "input": {
+                      "rule": "required",
+                      "type": "bytes",
+                      "id": 3
+                    }
+                  }
+                },
+                "MemModuleLoadResponse": {
+                  "fields": {
+                    "data": {
+                      "rule": "required",
+                      "type": "bytes",
+                      "id": 1
+                    }
+                  }
+                },
+                "SelectGameAccountRequest": {
+                  "fields": {
+                    "gameAccount": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "GameAccountSelectedRequest": {
+                  "fields": {
+                    "result": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "gameAccount": {
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "VerifyWebCredentialsRequest": {
+                  "fields": {
+                    "webCredentials": {
+                      "type": "bytes",
+                      "id": 1
+                    }
+                  }
+                }
+              }
+            },
+            "challenge": {
+              "nested": {
+                "Challenge": {
+                  "fields": {
+                    "type": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "info": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "answer": {
+                      "type": "string",
+                      "id": 3
+                    },
+                    "retries": {
+                      "type": "uint32",
+                      "id": 4
+                    }
+                  }
+                },
+                "ChallengePickedRequest": {
+                  "fields": {
+                    "challenge": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "id": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "newChallengeProtocol": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "ChallengePickedResponse": {
+                  "fields": {
+                    "data": {
+                      "type": "bytes",
+                      "id": 1
+                    }
+                  }
+                },
+                "ChallengeAnsweredRequest": {
+                  "fields": {
+                    "answer": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 1
+                    },
+                    "data": {
+                      "type": "bytes",
+                      "id": 2
+                    },
+                    "id": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "ChallengeAnsweredResponse": {
+                  "fields": {
+                    "data": {
+                      "type": "bytes",
+                      "id": 1
+                    },
+                    "doRetry": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "recordNotFound": {
+                      "type": "bool",
+                      "id": 3
+                    }
+                  }
+                },
+                "ChallengeCancelledRequest": {
+                  "fields": {
+                    "id": {
+                      "type": "uint32",
+                      "id": 1
+                    }
+                  }
+                },
+                "SendChallengeToUserRequest": {
+                  "fields": {
+                    "peerId": {
+                      "type": "ProcessId",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "challenges": {
+                      "rule": "repeated",
+                      "type": "Challenge",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "context": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 4
+                    },
+                    "timeout": {
+                      "type": "uint64",
+                      "id": 5
+                    },
+                    "attributes": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 6,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "SendChallengeToUserResponse": {
+                  "fields": {
+                    "id": {
+                      "type": "uint32",
+                      "id": 1
+                    }
+                  }
+                },
+                "ChallengeUserRequest": {
+                  "fields": {
+                    "challenges": {
+                      "rule": "repeated",
+                      "type": "Challenge",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "context": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "id": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "deadline": {
+                      "type": "uint64",
+                      "id": 4
+                    },
+                    "attributes": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 6
+                    }
+                  }
+                },
+                "ChallengeResultRequest": {
+                  "fields": {
+                    "id": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "type": {
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "errorId": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "answer": {
+                      "type": "bytes",
+                      "id": 4
+                    }
+                  }
+                },
+                "ChallengeExternalRequest": {
+                  "fields": {
+                    "requestToken": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "payloadType": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "payload": {
+                      "type": "bytes",
+                      "id": 3
+                    }
+                  }
+                },
+                "ChallengeExternalResult": {
+                  "fields": {
+                    "requestToken": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "passed": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "channel_invitation": {
+              "nested": {
+                "AcceptInvitationRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberState": {
+                      "type": "channel.MemberState",
+                      "id": 2
+                    },
+                    "invitationId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 3
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 4
+                    },
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 5
+                    },
+                    "serviceType": {
+                      "type": "uint32",
+                      "id": 6
+                    },
+                    "localSubscriber": {
+                      "type": "bool",
+                      "id": 7,
+                      "options": {
+                        "default": true
+                      }
+                    }
+                  }
+                },
+                "AcceptInvitationResponse": {
+                  "fields": {
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 1
+                    }
+                  }
+                },
+                "SubscribeRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 2
+                    }
+                  }
+                },
+                "SubscribeResponse": {
+                  "fields": {
+                    "collection": {
+                      "rule": "repeated",
+                      "type": "InvitationCollection",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "receivedInvitation": {
+                      "rule": "repeated",
+                      "type": "invitation.Invitation",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "UnsubscribeRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "SuggestInvitationRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 3
+                    },
+                    "approvalId": {
+                      "type": "EntityId",
+                      "id": 4
+                    },
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 5
+                    },
+                    "agentInfo": {
+                      "type": "AccountInfo",
+                      "id": 6
+                    }
+                  }
+                },
+                "RevokeInvitationRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "invitationId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 3
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 4
+                    }
+                  }
+                },
+                "HasRoomForInvitationRequest": {
+                  "fields": {
+                    "serviceType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "channelType": {
+                      "type": "string",
+                      "id": 3,
+                      "options": {
+                        "default": "default"
+                      }
+                    }
+                  }
+                },
+                "ChannelCountDescription": {
+                  "fields": {
+                    "serviceType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "program": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "channelType": {
+                      "type": "string",
+                      "id": 3,
+                      "options": {
+                        "default": "default"
+                      }
+                    },
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 4
+                    }
+                  }
+                },
+                "IncrementChannelCountRequest": {
+                  "fields": {
+                    "agentId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "descriptions": {
+                      "rule": "repeated",
+                      "type": "ChannelCountDescription",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "IncrementChannelCountResponse": {
+                  "fields": {
+                    "reservationTokens": {
+                      "rule": "repeated",
+                      "type": "uint64",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "DecrementChannelCountRequest": {
+                  "fields": {
+                    "agentId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reservationToken": {
+                      "type": "uint64",
+                      "id": 3
+                    }
+                  }
+                },
+                "UpdateChannelCountRequest": {
+                  "fields": {
+                    "agentId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "reservationToken": {
+                      "type": "uint64",
+                      "id": 2
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 3
+                    }
+                  }
+                },
+                "ListChannelCountRequest": {
+                  "fields": {
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "serviceType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 3
+                    }
+                  }
+                },
+                "ChannelCount": {
+                  "fields": {
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "channelType": {
+                      "type": "string",
+                      "id": 2,
+                      "options": {
+                        "default": "default"
+                      }
+                    }
+                  }
+                },
+                "ListChannelCountResponse": {
+                  "fields": {
+                    "channel": {
+                      "rule": "repeated",
+                      "type": "ChannelCount",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "InvitationAddedNotification": {
+                  "fields": {
+                    "invitation": {
+                      "rule": "required",
+                      "type": "invitation.Invitation",
+                      "id": 1
+                    }
+                  }
+                },
+                "InvitationRemovedNotification": {
+                  "fields": {
+                    "invitation": {
+                      "rule": "required",
+                      "type": "invitation.Invitation",
+                      "id": 1
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "SuggestionAddedNotification": {
+                  "fields": {
+                    "suggestion": {
+                      "rule": "required",
+                      "type": "invitation.Suggestion",
+                      "id": 1
+                    }
+                  }
+                },
+                "ChannelInvitation": {
+                  "fields": {
+                    "channelDescription": {
+                      "rule": "required",
+                      "type": "channel.ChannelDescription",
+                      "id": 1
+                    },
+                    "reserved": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "rejoin": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "serviceType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 4
+                    }
+                  }
+                },
+                "ChannelInvitationParams": {
+                  "fields": {
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "reserved": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "rejoin": {
+                      "type": "bool",
+                      "id": 3
+                    },
+                    "serviceType": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 4
+                    }
+                  }
+                },
+                "InvitationCollection": {
+                  "fields": {
+                    "serviceType": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "maxReceivedInvitations": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 3
+                    },
+                    "receivedInvitation": {
+                      "rule": "repeated",
+                      "type": "invitation.Invitation",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "channel": {
+              "nested": {
+                "GetChannelIdRequest": {
+                  "fields": {}
+                },
+                "GetChannelIdResponse": {
+                  "fields": {
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "CreateChannelRequest": {
+                  "fields": {
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "memberState": {
+                      "type": "MemberState",
+                      "id": 2
+                    },
+                    "channelState": {
+                      "type": "ChannelState",
+                      "id": 3
+                    },
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 4
+                    },
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 5
+                    },
+                    "localAgent": {
+                      "type": "EntityId",
+                      "id": 6
+                    },
+                    "localMemberState": {
+                      "type": "MemberState",
+                      "id": 7
+                    }
+                  }
+                },
+                "CreateChannelResponse": {
+                  "fields": {
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 1
+                    },
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "JoinChannelRequest": {
+                  "fields": {
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "memberState": {
+                      "type": "MemberState",
+                      "id": 2
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 3
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 4
+                    },
+                    "friendAccountId": {
+                      "rule": "repeated",
+                      "type": "EntityId",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "localSubscriber": {
+                      "type": "bool",
+                      "id": 6,
+                      "options": {
+                        "default": true
+                      }
+                    }
+                  }
+                },
+                "JoinChannelResponse": {
+                  "fields": {
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 1
+                    },
+                    "requireFriendValidation": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "privilegedAccount": {
+                      "rule": "repeated",
+                      "type": "EntityId",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "SubscribeChannelRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 3
+                    }
+                  }
+                },
+                "SubscribeChannelResponse": {
+                  "fields": {
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 1
+                    }
+                  }
+                },
+                "FindChannelRequest": {
+                  "fields": {
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "options": {
+                      "rule": "required",
+                      "type": "FindChannelOptions",
+                      "id": 2
+                    }
+                  }
+                },
+                "FindChannelResponse": {
+                  "fields": {
+                    "channel": {
+                      "rule": "repeated",
+                      "type": "ChannelDescription",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GetChannelInfoRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "fetchState": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "fetchMembers": {
+                      "type": "bool",
+                      "id": 4,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GetChannelInfoResponse": {
+                  "fields": {
+                    "channelInfo": {
+                      "type": "ChannelInfo",
+                      "id": 1
+                    }
+                  }
+                },
+                "AddMemberRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberIdentity": {
+                      "rule": "required",
+                      "type": "Identity",
+                      "id": 2
+                    },
+                    "memberState": {
+                      "rule": "required",
+                      "type": "MemberState",
+                      "id": 3
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 4
+                    },
+                    "subscribe": {
+                      "type": "bool",
+                      "id": 5,
+                      "options": {
+                        "default": true
+                      }
+                    }
+                  }
+                },
+                "RemoveMemberRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "UnsubscribeMemberRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "SendMessageRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "message": {
+                      "rule": "required",
+                      "type": "Message",
+                      "id": 2
+                    },
+                    "requiredPrivileges": {
+                      "type": "uint64",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "UpdateChannelStateRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "stateChange": {
+                      "rule": "required",
+                      "type": "ChannelState",
+                      "id": 2
+                    }
+                  }
+                },
+                "UpdateMemberStateRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "stateChange": {
+                      "rule": "repeated",
+                      "type": "Member",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "removedRole": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                },
+                "DissolveRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "SetRolesRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "packed": true
+                      }
+                    },
+                    "memberId": {
+                      "rule": "repeated",
+                      "type": "EntityId",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "AddNotification": {
+                  "fields": {
+                    "self": {
+                      "type": "Member",
+                      "id": 1
+                    },
+                    "member": {
+                      "rule": "repeated",
+                      "type": "Member",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "channelState": {
+                      "rule": "required",
+                      "type": "ChannelState",
+                      "id": 3
+                    }
+                  }
+                },
+                "JoinNotification": {
+                  "fields": {
+                    "member": {
+                      "rule": "required",
+                      "type": "Member",
+                      "id": 1
+                    }
+                  }
+                },
+                "RemoveNotification": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "LeaveNotification": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "SendMessageNotification": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "message": {
+                      "rule": "required",
+                      "type": "Message",
+                      "id": 2
+                    },
+                    "requiredPrivileges": {
+                      "type": "uint64",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "UpdateChannelStateNotification": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "stateChange": {
+                      "rule": "required",
+                      "type": "ChannelState",
+                      "id": 2
+                    }
+                  }
+                },
+                "UpdateMemberStateNotification": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "stateChange": {
+                      "rule": "repeated",
+                      "type": "Member",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "removedRole": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                },
+                "Message": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "role": {
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "FindChannelOptions": {
+                  "fields": {
+                    "startIndex": {
+                      "type": "uint32",
+                      "id": 1,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "maxResults": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 16
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": 3
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 4
+                    },
+                    "locale": {
+                      "type": "fixed32",
+                      "id": 5
+                    },
+                    "capacityFull": {
+                      "type": "uint32",
+                      "id": 6
+                    },
+                    "attributeFilter": {
+                      "rule": "required",
+                      "type": "attribute.AttributeFilter",
+                      "id": 7
+                    },
+                    "channelType": {
+                      "type": "string",
+                      "id": 8
+                    }
+                  }
+                },
+                "ChannelDescription": {
+                  "fields": {
+                    "channelId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "currentMembers": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "state": {
+                      "type": "ChannelState",
+                      "id": 3
+                    }
+                  }
+                },
+                "ChannelInfo": {
+                  "fields": {
+                    "description": {
+                      "rule": "required",
+                      "type": "ChannelDescription",
+                      "id": 1
+                    },
+                    "member": {
+                      "rule": "repeated",
+                      "type": "Member",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ChannelState": {
+                  "fields": {
+                    "maxMembers": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "minMembers": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "invitation": {
+                      "rule": "repeated",
+                      "type": "invitation.Invitation",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "maxInvitations": {
+                      "type": "uint32",
+                      "id": 5
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 6
+                    },
+                    "privacyLevel": {
+                      "type": "PrivacyLevel",
+                      "id": 7,
+                      "options": {
+                        "default": "PRIVACY_LEVEL_OPEN"
+                      }
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": 8
+                    },
+                    "delegateName": {
+                      "type": "string",
+                      "id": 9
+                    },
+                    "channelType": {
+                      "type": "string",
+                      "id": 10,
+                      "options": {
+                        "default": "default"
+                      }
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 11,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "allowOfflineMembers": {
+                      "type": "bool",
+                      "id": 12,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "subscribeToPresence": {
+                      "type": "bool",
+                      "id": 13,
+                      "options": {
+                        "default": true
+                      }
+                    },
+                    "channel": {
+                      "type": "bnet.protocol.channel.ChannelState",
+                      "id": 100
+                    },
+                    "presence": {
+                      "type": "bnet.protocol.presence.ChannelState",
+                      "id": 101
+                    }
+                  },
+                  "nested": {
+                    "PrivacyLevel": {
+                      "values": {
+                        "PRIVACY_LEVEL_OPEN": 1,
+                        "PRIVACY_LEVEL_OPEN_INVITATION_AND_FRIEND": 2,
+                        "PRIVACY_LEVEL_OPEN_INVITATION": 3,
+                        "PRIVACY_LEVEL_CLOSED": 4
+                      }
+                    }
+                  }
+                },
+                "MemberState": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "packed": true
+                      }
+                    },
+                    "privileges": {
+                      "type": "uint64",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "info": {
+                      "type": "AccountInfo",
+                      "id": 4
+                    },
+                    "hidden": {
+                      "type": "bool",
+                      "id": 5,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "Member": {
+                  "fields": {
+                    "identity": {
+                      "rule": "required",
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "state": {
+                      "rule": "required",
+                      "type": "MemberState",
+                      "id": 2
+                    }
+                  }
+                }
+              }
+            },
+            "chat": {
+              "nested": {
+                "ChannelState": {
+                  "fields": {
+                    "identity": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "program": {
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "locale": {
+                      "type": "fixed32",
+                      "id": 3
+                    },
+                    "public": {
+                      "type": "bool",
+                      "id": 4,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "bucketIndex": {
+                      "type": "uint32",
+                      "id": 5
+                    }
+                  }
+                }
+              }
+            },
+            "connection": {
+              "nested": {
+                "ConnectRequest": {
+                  "fields": {
+                    "clientId": {
+                      "type": "ProcessId",
+                      "id": 1
+                    },
+                    "bindRequest": {
+                      "type": "BindRequest",
+                      "id": 2
+                    }
+                  }
+                },
+                "ConnectionMeteringContentHandles": {
+                  "fields": {
+                    "contentHandle": {
+                      "rule": "repeated",
+                      "type": "ContentHandle",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ConnectResponse": {
+                  "fields": {
+                    "serverId": {
+                      "rule": "required",
+                      "type": "ProcessId",
+                      "id": 1
+                    },
+                    "clientId": {
+                      "type": "ProcessId",
+                      "id": 2
+                    },
+                    "bindResult": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "bindResponse": {
+                      "type": "BindResponse",
+                      "id": 4
+                    },
+                    "contentHandleArray": {
+                      "type": "ConnectionMeteringContentHandles",
+                      "id": 5
+                    },
+                    "serverTime": {
+                      "type": "uint64",
+                      "id": 6
+                    }
+                  }
+                },
+                "BoundService": {
+                  "fields": {
+                    "hash": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "id": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "BindRequest": {
+                  "fields": {
+                    "importedServiceHash": {
+                      "rule": "repeated",
+                      "type": "fixed32",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "exportedService": {
+                      "rule": "repeated",
+                      "type": "BoundService",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "BindResponse": {
+                  "fields": {
+                    "importedServiceId": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 1,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                },
+                "EchoRequest": {
+                  "fields": {
+                    "time": {
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "networkOnly": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "payload": {
+                      "type": "bytes",
+                      "id": 3
+                    }
+                  }
+                },
+                "EchoResponse": {
+                  "fields": {
+                    "time": {
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "payload": {
+                      "type": "bytes",
+                      "id": 2
+                    }
+                  }
+                },
+                "DisconnectRequest": {
+                  "fields": {
+                    "errorCode": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    }
+                  }
+                },
+                "DisconnectNotification": {
+                  "fields": {
+                    "errorCode": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "reason": {
+                      "type": "string",
+                      "id": 2
+                    }
+                  }
+                },
+                "EncryptRequest": {
+                  "fields": {}
+                }
+              }
+            },
+            "ContentHandle": {
+              "fields": {
+                "region": {
+                  "rule": "required",
+                  "type": "fixed32",
+                  "id": 1
+                },
+                "usage": {
+                  "rule": "required",
+                  "type": "fixed32",
+                  "id": 2
+                },
+                "hash": {
+                  "rule": "required",
+                  "type": "bytes",
+                  "id": 3
+                },
+                "protoUrl": {
+                  "type": "string",
+                  "id": 4
+                }
+              }
+            },
+            "Path": {
+              "fields": {
+                "ordinal": {
+                  "rule": "repeated",
+                  "type": "uint32",
+                  "id": 1,
+                  "options": {
+                    "packed": true
+                  }
+                }
+              }
+            },
+            "EntityId": {
+              "fields": {
+                "high": {
+                  "rule": "required",
+                  "type": "fixed64",
+                  "id": 1
+                },
+                "low": {
+                  "rule": "required",
+                  "type": "fixed64",
+                  "id": 2
+                }
+              }
+            },
+            "Identity": {
+              "fields": {
+                "accountId": {
+                  "type": "EntityId",
+                  "id": 1
+                },
+                "gameAccountId": {
+                  "type": "EntityId",
+                  "id": 2
+                }
+              }
+            },
+            "AccountInfo": {
+              "fields": {
+                "accountPaid": {
+                  "type": "bool",
+                  "id": 1,
+                  "options": {
+                    "default": false
+                  }
+                },
+                "countryId": {
+                  "type": "fixed32",
+                  "id": 2,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "battleTag": {
+                  "type": "string",
+                  "id": 3
+                },
+                "manualReview": {
+                  "type": "bool",
+                  "id": 4,
+                  "options": {
+                    "default": false
+                  }
+                }
+              }
+            },
+            "friends": {
+              "nested": {
+                "SubscribeToFriendsRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 2
+                    }
+                  }
+                },
+                "SubscribeToFriendsResponse": {
+                  "fields": {
+                    "maxFriends": {
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "maxReceivedInvitations": {
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "maxSentInvitations": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "Role",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "friends": {
+                      "rule": "repeated",
+                      "type": "Friend",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "sentInvitations": {
+                      "rule": "repeated",
+                      "type": "invitation.Invitation",
+                      "id": 6,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "receivedInvitations": {
+                      "rule": "repeated",
+                      "type": "invitation.Invitation",
+                      "id": 7,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "UnsubscribeToFriendsRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 2
+                    }
+                  }
+                },
+                "GenericFriendRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "GenericFriendResponse": {
+                  "fields": {
+                    "targetFriend": {
+                      "type": "Friend",
+                      "id": 1
+                    }
+                  }
+                },
+                "AssignRoleRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "int32",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ViewFriendsRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                },
+                "ViewFriendsResponse": {
+                  "fields": {
+                    "friends": {
+                      "rule": "repeated",
+                      "type": "Friend",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "UpdateFriendStateRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "attributesEpoch": {
+                      "type": "uint64",
+                      "id": 4
+                    }
+                  }
+                },
+                "FriendNotification": {
+                  "fields": {
+                    "target": {
+                      "rule": "required",
+                      "type": "Friend",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "UpdateFriendStateNotification": {
+                  "fields": {
+                    "changedFriend": {
+                      "rule": "required",
+                      "type": "Friend",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "InvitationNotification": {
+                  "fields": {
+                    "invitation": {
+                      "rule": "required",
+                      "type": "invitation.Invitation",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "Friend": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "packed": true
+                      }
+                    },
+                    "privileges": {
+                      "type": "uint64",
+                      "id": 4,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "attributesEpoch": {
+                      "type": "uint64",
+                      "id": 5
+                    },
+                    "fullName": {
+                      "type": "string",
+                      "id": 6
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 7
+                    }
+                  }
+                },
+                "FriendInvitation": {
+                  "fields": {
+                    "firstReceived": {
+                      "type": "bool",
+                      "id": 1,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                },
+                "FriendInvitationParams": {
+                  "fields": {
+                    "targetEmail": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "targetBattleTag": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "inviterBattleTag": {
+                      "type": "string",
+                      "id": 3
+                    },
+                    "inviterFullName": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "inviteeDisplayName": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "role": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 6,
+                      "options": {
+                        "packed": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "game_master": {
+              "nested": {
+                "GameProperties": {
+                  "fields": {
+                    "creationAttributes": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "filter": {
+                      "type": "attribute.AttributeFilter",
+                      "id": 2
+                    },
+                    "create": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "open": {
+                      "type": "bool",
+                      "id": 4,
+                      "options": {
+                        "default": true
+                      }
+                    },
+                    "programId": {
+                      "type": "fixed32",
+                      "id": 5
+                    }
+                  }
+                },
+                "JoinGameRequest": {
+                  "fields": {
+                    "gameHandle": {
+                      "rule": "required",
+                      "type": "GameHandle",
+                      "id": 1
+                    },
+                    "player": {
+                      "rule": "repeated",
+                      "type": "Player",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "advancedNotification": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "JoinGameResponse": {
+                  "fields": {
+                    "requestId": {
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "queued": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "connectInfo": {
+                      "rule": "repeated",
+                      "type": "ConnectInfo",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ListFactoriesRequest": {
+                  "fields": {
+                    "filter": {
+                      "rule": "required",
+                      "type": "attribute.AttributeFilter",
+                      "id": 1
+                    },
+                    "startIndex": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "maxResults": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 100
+                      }
+                    }
+                  }
+                },
+                "ListFactoriesResponse": {
+                  "fields": {
+                    "description": {
+                      "rule": "repeated",
+                      "type": "GameFactoryDescription",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "totalResults": {
+                      "type": "uint32",
+                      "id": 2
+                    }
+                  }
+                },
+                "FindGameRequest": {
+                  "fields": {
+                    "player": {
+                      "rule": "repeated",
+                      "type": "Player",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "factoryId": {
+                      "type": "fixed64",
+                      "id": 2
+                    },
+                    "properties": {
+                      "type": "GameProperties",
+                      "id": 3
+                    },
+                    "objectId": {
+                      "type": "uint64",
+                      "id": 4
+                    },
+                    "requestId": {
+                      "type": "fixed64",
+                      "id": 5
+                    },
+                    "advancedNotification": {
+                      "type": "bool",
+                      "id": 6,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "FindGameResponse": {
+                  "fields": {
+                    "requestId": {
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "factoryId": {
+                      "type": "fixed64",
+                      "id": 2
+                    },
+                    "queued": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GameEndedNotification": {
+                  "fields": {
+                    "gameHandle": {
+                      "rule": "required",
+                      "type": "GameHandle",
+                      "id": 1
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "PlayerLeftNotification": {
+                  "fields": {
+                    "gameHandle": {
+                      "rule": "required",
+                      "type": "GameHandle",
+                      "id": 1
+                    },
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 1
+                      }
+                    }
+                  }
+                },
+                "RegisterServerRequest": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "state": {
+                      "type": "server_pool.ServerState",
+                      "id": 2
+                    },
+                    "programId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 3
+                    }
+                  }
+                },
+                "UnregisterServerRequest": {
+                  "fields": {}
+                },
+                "RegisterUtilitiesRequest": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "state": {
+                      "type": "server_pool.ServerState",
+                      "id": 2
+                    },
+                    "programId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 3
+                    }
+                  }
+                },
+                "UnregisterUtilitiesRequest": {
+                  "fields": {}
+                },
+                "SubscribeRequest": {
+                  "fields": {
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 1
+                    }
+                  }
+                },
+                "SubscribeResponse": {
+                  "fields": {
+                    "subscriptionId": {
+                      "type": "uint64",
+                      "id": 1
+                    }
+                  }
+                },
+                "UnsubscribeRequest": {
+                  "fields": {
+                    "subscriptionId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 1
+                    }
+                  }
+                },
+                "ChangeGameRequest": {
+                  "fields": {
+                    "gameHandle": {
+                      "rule": "required",
+                      "type": "GameHandle",
+                      "id": 1
+                    },
+                    "open": {
+                      "type": "bool",
+                      "id": 2
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "replace": {
+                      "type": "bool",
+                      "id": 4,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "GetFactoryInfoRequest": {
+                  "fields": {
+                    "factoryId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    }
+                  }
+                },
+                "GetFactoryInfoResponse": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "statsBucket": {
+                      "rule": "repeated",
+                      "type": "GameStatsBucket",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GetGameStatsRequest": {
+                  "fields": {
+                    "factoryId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "filter": {
+                      "rule": "required",
+                      "type": "attribute.AttributeFilter",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetGameStatsResponse": {
+                  "fields": {
+                    "statsBucket": {
+                      "rule": "repeated",
+                      "type": "GameStatsBucket",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "FactoryUpdateNotification": {
+                  "fields": {
+                    "op": {
+                      "rule": "required",
+                      "type": "Operation",
+                      "id": 1
+                    },
+                    "description": {
+                      "rule": "required",
+                      "type": "GameFactoryDescription",
+                      "id": 2
+                    },
+                    "programId": {
+                      "type": "fixed32",
+                      "id": 3
+                    }
+                  },
+                  "nested": {
+                    "Operation": {
+                      "values": {
+                        "ADD": 1,
+                        "REMOVE": 2,
+                        "CHANGE": 3
+                      }
+                    }
+                  }
+                },
+                "GameFoundNotification": {
+                  "fields": {
+                    "requestId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "errorCode": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "gameHandle": {
+                      "type": "GameHandle",
+                      "id": 3
+                    },
+                    "connectInfo": {
+                      "rule": "repeated",
+                      "type": "ConnectInfo",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "Player": {
+                  "fields": {
+                    "identity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ConnectInfo": {
+                  "fields": {
+                    "memberId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "host": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    },
+                    "port": {
+                      "rule": "required",
+                      "type": "int32",
+                      "id": 3
+                    },
+                    "token": {
+                      "type": "bytes",
+                      "id": 4
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 5,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameStatsBucket": {
+                  "fields": {
+                    "bucketMin": {
+                      "type": "float",
+                      "id": 1,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "bucketMax": {
+                      "type": "float",
+                      "id": 2,
+                      "options": {
+                        "default": 4294967000
+                      }
+                    },
+                    "waitMilliseconds": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "gamesPerHour": {
+                      "type": "uint32",
+                      "id": 4,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "activeGames": {
+                      "type": "uint32",
+                      "id": 5,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "activePlayers": {
+                      "type": "uint32",
+                      "id": 6,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "formingGames": {
+                      "type": "uint32",
+                      "id": 7,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "waitingPlayers": {
+                      "type": "uint32",
+                      "id": 8,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "openJoinableGames": {
+                      "type": "uint32",
+                      "id": 9,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "playersInOpenJoinableGames": {
+                      "type": "uint32",
+                      "id": 10,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "openGamesTotal": {
+                      "type": "uint32",
+                      "id": 11,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "playersInOpenGamesTotal": {
+                      "type": "uint32",
+                      "id": 12,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "GameFactoryDescription": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "statsBucket": {
+                      "rule": "repeated",
+                      "type": "GameStatsBucket",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "unseededId": {
+                      "type": "fixed64",
+                      "id": 5,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "allowQueueing": {
+                      "type": "bool",
+                      "id": 6,
+                      "options": {
+                        "default": true
+                      }
+                    }
+                  }
+                },
+                "GameHandle": {
+                  "fields": {
+                    "factoryId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "gameId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "CancelGameEntryRequest": {
+                  "fields": {
+                    "requestId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "factoryId": {
+                      "type": "fixed64",
+                      "id": 2
+                    },
+                    "player": {
+                      "rule": "repeated",
+                      "type": "Player",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "game_utilities": {
+              "nested": {
+                "ClientRequest": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 2
+                    },
+                    "bnetAccountId": {
+                      "type": "EntityId",
+                      "id": 3
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 4
+                    }
+                  }
+                },
+                "ClientResponse": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "ServerRequest": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "program": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 3
+                    }
+                  }
+                },
+                "ServerResponse": {
+                  "fields": {
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "PresenceChannelCreatedRequest": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "gameAccountId": {
+                      "type": "EntityId",
+                      "id": 3
+                    },
+                    "bnetAccountId": {
+                      "type": "EntityId",
+                      "id": 4
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 5
+                    }
+                  }
+                },
+                "GetPlayerVariablesRequest": {
+                  "fields": {
+                    "playerVariables": {
+                      "rule": "repeated",
+                      "type": "PlayerVariables",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 2
+                    }
+                  }
+                },
+                "GetPlayerVariablesResponse": {
+                  "fields": {
+                    "playerVariables": {
+                      "rule": "repeated",
+                      "type": "PlayerVariables",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "GameAccountOnlineNotification": {
+                  "fields": {
+                    "gameAccountId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 2
+                    }
+                  }
+                },
+                "GameAccountOfflineNotification": {
+                  "fields": {
+                    "gameAccountId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "host": {
+                      "type": "ProcessId",
+                      "id": 2
+                    }
+                  }
+                },
+                "PlayerVariables": {
+                  "fields": {
+                    "identity": {
+                      "rule": "required",
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "rating": {
+                      "type": "double",
+                      "id": 2
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 3,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "invitation": {
+              "nested": {
+                "Invitation": {
+                  "fields": {
+                    "id": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 1
+                    },
+                    "inviterIdentity": {
+                      "rule": "required",
+                      "type": "Identity",
+                      "id": 2
+                    },
+                    "inviteeIdentity": {
+                      "rule": "required",
+                      "type": "Identity",
+                      "id": 3
+                    },
+                    "inviterName": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "inviteeName": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "invitationMessage": {
+                      "type": "string",
+                      "id": 6
+                    },
+                    "creationTime": {
+                      "type": "uint64",
+                      "id": 7
+                    },
+                    "expirationTime": {
+                      "type": "uint64",
+                      "id": 8
+                    },
+                    "friendInvite": {
+                      "type": "bnet.protocol.friends.FriendInvitation",
+                      "id": 103
+                    }
+                  }
+                },
+                "Suggestion": {
+                  "fields": {
+                    "channelId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "suggesterId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "suggesteeId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 3
+                    },
+                    "suggesterName": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "suggesteeName": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "suggesterAccountId": {
+                      "type": "EntityId",
+                      "id": 6
+                    }
+                  }
+                },
+                "InvitationTarget": {
+                  "fields": {
+                    "identity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "email": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "battleTag": {
+                      "type": "string",
+                      "id": 3
+                    }
+                  }
+                },
+                "InvitationParams": {
+                  "fields": {
+                    "invitationMessage": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "expirationTime": {
+                      "type": "uint64",
+                      "id": 2,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "friendParams": {
+                      "type": "bnet.protocol.friends.FriendInvitationParams",
+                      "id": 103
+                    }
+                  }
+                },
+                "SendInvitationRequest": {
+                  "fields": {
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "params": {
+                      "rule": "required",
+                      "type": "InvitationParams",
+                      "id": 3
+                    },
+                    "agentInfo": {
+                      "type": "AccountInfo",
+                      "id": 4
+                    },
+                    "target": {
+                      "type": "InvitationTarget",
+                      "id": 5
+                    }
+                  }
+                },
+                "SendInvitationResponse": {
+                  "fields": {
+                    "invitation": {
+                      "type": "Invitation",
+                      "id": 2
+                    }
+                  }
+                },
+                "UpdateInvitationRequest": {
+                  "fields": {
+                    "agentIdentity": {
+                      "type": "Identity",
+                      "id": 1
+                    },
+                    "invitationId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 2
+                    },
+                    "params": {
+                      "rule": "required",
+                      "type": "InvitationParams",
+                      "id": 3
+                    }
+                  }
+                },
+                "GenericRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "invitationId": {
+                      "rule": "required",
+                      "type": "fixed64",
+                      "id": 3
+                    },
+                    "inviteeName": {
+                      "type": "string",
+                      "id": 4
+                    },
+                    "inviterName": {
+                      "type": "string",
+                      "id": 5
+                    },
+                    "previousRole": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 6,
+                      "options": {
+                        "packed": true
+                      }
+                    },
+                    "desiredRole": {
+                      "rule": "repeated",
+                      "type": "uint32",
+                      "id": 7,
+                      "options": {
+                        "packed": true
+                      }
+                    },
+                    "reason": {
+                      "type": "uint32",
+                      "id": 8
+                    }
+                  }
+                }
+              }
+            },
+            "notification": {
+              "nested": {
+                "Notification": {
+                  "fields": {
+                    "senderId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "targetId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "type": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 3
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "senderAccountId": {
+                      "type": "EntityId",
+                      "id": 5
+                    },
+                    "targetAccountId": {
+                      "type": "EntityId",
+                      "id": 6
+                    },
+                    "senderBattleTag": {
+                      "type": "string",
+                      "id": 7
+                    }
+                  }
+                },
+                "FindClientRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "FindClientResponse": {
+                  "fields": {
+                    "label": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "clientProcessId": {
+                      "type": "ProcessId",
+                      "id": 2
+                    }
+                  }
+                },
+                "RegisterClientRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "UnregisterClientRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                }
+              }
+            },
+            "presence": {
+              "nested": {
+                "SubscribeRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    },
+                    "objectId": {
+                      "rule": "required",
+                      "type": "uint64",
+                      "id": 3
+                    },
+                    "programId": {
+                      "rule": "repeated",
+                      "type": "fixed32",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "SubscribeNotificationRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    }
+                  }
+                },
+                "UnsubscribeRequest": {
+                  "fields": {
+                    "agentId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 2
+                    }
+                  }
+                },
+                "UpdateRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "fieldOperation": {
+                      "rule": "repeated",
+                      "type": "FieldOperation",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "QueryRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "key": {
+                      "rule": "repeated",
+                      "type": "FieldKey",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "QueryResponse": {
+                  "fields": {
+                    "field": {
+                      "rule": "repeated",
+                      "type": "Field",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                },
+                "OwnershipRequest": {
+                  "fields": {
+                    "entityId": {
+                      "rule": "required",
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "releaseOwnership": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                },
+                "RichPresence": {
+                  "fields": {
+                    "programId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "streamId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "index": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 3
+                    }
+                  }
+                },
+                "FieldKey": {
+                  "fields": {
+                    "program": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 1
+                    },
+                    "group": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 2
+                    },
+                    "field": {
+                      "rule": "required",
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "index": {
+                      "type": "uint64",
+                      "id": 4,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "Field": {
+                  "fields": {
+                    "key": {
+                      "rule": "required",
+                      "type": "FieldKey",
+                      "id": 1
+                    },
+                    "value": {
+                      "rule": "required",
+                      "type": "attribute.Variant",
+                      "id": 2
+                    }
+                  }
+                },
+                "FieldOperation": {
+                  "fields": {
+                    "field": {
+                      "rule": "required",
+                      "type": "Field",
+                      "id": 1
+                    },
+                    "operation": {
+                      "type": "OperationType",
+                      "id": 2,
+                      "options": {
+                        "default": "SET"
+                      }
+                    }
+                  },
+                  "nested": {
+                    "OperationType": {
+                      "values": {
+                        "SET": 0,
+                        "CLEAR": 1
+                      }
+                    }
+                  }
+                },
+                "ChannelState": {
+                  "fields": {
+                    "entityId": {
+                      "type": "EntityId",
+                      "id": 1
+                    },
+                    "fieldOperation": {
+                      "rule": "repeated",
+                      "type": "FieldOperation",
+                      "id": 2,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "healing": {
+                      "type": "bool",
+                      "id": 3,
+                      "options": {
+                        "default": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "profanity": {
+              "nested": {
+                "WordFilter": {
+                  "fields": {
+                    "type": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 1
+                    },
+                    "regex": {
+                      "rule": "required",
+                      "type": "string",
+                      "id": 2
+                    }
+                  }
+                },
+                "WordFilters": {
+                  "fields": {
+                    "filters": {
+                      "rule": "repeated",
+                      "type": "WordFilter",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resources": {
+              "nested": {
+                "ContentHandleRequest": {
+                  "fields": {
+                    "programId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 1
+                    },
+                    "streamId": {
+                      "rule": "required",
+                      "type": "fixed32",
+                      "id": 2
+                    },
+                    "locale": {
+                      "type": "fixed32",
+                      "id": 3,
+                      "options": {
+                        "default": 1701729619
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "Privilege": {
+              "fields": {
+                "name": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "value": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 2
+                }
+              }
+            },
+            "RoleSetConfig": {
+              "fields": {
+                "privilege": {
+                  "rule": "repeated",
+                  "type": "Privilege",
+                  "id": 1,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "roleSet": {
+                  "rule": "required",
+                  "type": "RoleSet",
+                  "id": 2
+                }
+              }
+            },
+            "Role": {
+              "fields": {
+                "id": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "name": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "privilege": {
+                  "rule": "repeated",
+                  "type": "string",
+                  "id": 3,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "assignableRole": {
+                  "rule": "repeated",
+                  "type": "uint32",
+                  "id": 4,
+                  "options": {
+                    "packed": true
+                  }
+                },
+                "required": {
+                  "type": "bool",
+                  "id": 5,
+                  "options": {
+                    "default": false
+                  }
+                },
+                "unique": {
+                  "type": "bool",
+                  "id": 6,
+                  "options": {
+                    "default": false
+                  }
+                },
+                "relegationRole": {
+                  "type": "uint32",
+                  "id": 7
+                },
+                "attribute": {
+                  "rule": "repeated",
+                  "type": "attribute.Attribute",
+                  "id": 8,
+                  "options": {
+                    "packed": false
+                  }
+                }
+              }
+            },
+            "RoleSet": {
+              "fields": {
+                "program": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "service": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "subtype": {
+                  "type": "string",
+                  "id": 3,
+                  "options": {
+                    "default": "default"
+                  }
+                },
+                "role": {
+                  "rule": "repeated",
+                  "type": "Role",
+                  "id": 4,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "defaultRole": {
+                  "rule": "repeated",
+                  "type": "uint32",
+                  "id": 5,
+                  "options": {
+                    "packed": true
+                  }
+                },
+                "maxMembers": {
+                  "type": "int32",
+                  "id": 6
+                },
+                "attribute": {
+                  "rule": "repeated",
+                  "type": "attribute.Attribute",
+                  "id": 7,
+                  "options": {
+                    "packed": false
+                  }
+                }
+              }
+            },
+            "NORESPONSE": {
+              "fields": {}
+            },
+            "Address": {
+              "fields": {
+                "address": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "port": {
+                  "type": "uint32",
+                  "id": 2
+                }
+              }
+            },
+            "ProcessId": {
+              "fields": {
+                "label": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "epoch": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 2
+                }
+              }
+            },
+            "ObjectAddress": {
+              "fields": {
+                "host": {
+                  "rule": "required",
+                  "type": "ProcessId",
+                  "id": 1
+                },
+                "objectId": {
+                  "type": "uint64",
+                  "id": 2,
+                  "options": {
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "NoData": {
+              "fields": {}
+            },
+            "ErrorInfo": {
+              "fields": {
+                "objectAddress": {
+                  "rule": "required",
+                  "type": "ObjectAddress",
+                  "id": 1
+                },
+                "status": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 2
+                },
+                "serviceHash": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 3
+                },
+                "methodId": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 4
+                }
+              }
+            },
+            "Header": {
+              "fields": {
+                "serviceId": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "methodId": {
+                  "type": "uint32",
+                  "id": 2
+                },
+                "token": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 3
+                },
+                "objectId": {
+                  "type": "uint64",
+                  "id": 4,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "size": {
+                  "type": "uint32",
+                  "id": 5,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "status": {
+                  "type": "uint32",
+                  "id": 6,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "error": {
+                  "rule": "repeated",
+                  "type": "ErrorInfo",
+                  "id": 7,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "timeout": {
+                  "type": "uint64",
+                  "id": 8
+                }
+              }
+            },
+            "server_pool": {
+              "nested": {
+                "GetLoadRequest": {
+                  "fields": {}
+                },
+                "ServerState": {
+                  "fields": {
+                    "currentLoad": {
+                      "type": "float",
+                      "id": 1,
+                      "options": {
+                        "default": 1
+                      }
+                    },
+                    "gameCount": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "playerCount": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                },
+                "ServerInfo": {
+                  "fields": {
+                    "host": {
+                      "rule": "required",
+                      "type": "ProcessId",
+                      "id": 1
+                    },
+                    "replace": {
+                      "type": "bool",
+                      "id": 2,
+                      "options": {
+                        "default": false
+                      }
+                    },
+                    "state": {
+                      "type": "ServerState",
+                      "id": 3
+                    },
+                    "attribute": {
+                      "rule": "repeated",
+                      "type": "attribute.Attribute",
+                      "id": 4,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "programId": {
+                      "type": "fixed32",
+                      "id": 5
+                    }
+                  }
+                },
+                "PoolStateRequest": {
+                  "fields": {}
+                },
+                "PoolStateResponse": {
+                  "fields": {
+                    "info": {
+                      "rule": "repeated",
+                      "type": "ServerInfo",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "config": {
+              "nested": {
+                "RPCMethodConfig": {
+                  "fields": {
+                    "serviceName": {
+                      "type": "string",
+                      "id": 1
+                    },
+                    "methodName": {
+                      "type": "string",
+                      "id": 2
+                    },
+                    "fixedCallCost": {
+                      "type": "uint32",
+                      "id": 3,
+                      "options": {
+                        "default": 1
+                      }
+                    },
+                    "fixedPacketSize": {
+                      "type": "uint32",
+                      "id": 4,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "variableMultiplier": {
+                      "type": "float",
+                      "id": 5,
+                      "options": {
+                        "default": 0
+                      }
+                    },
+                    "multiplier": {
+                      "type": "float",
+                      "id": 6,
+                      "options": {
+                        "default": 1
+                      }
+                    },
+                    "rateLimitCount": {
+                      "type": "uint32",
+                      "id": 7
+                    },
+                    "rateLimitSeconds": {
+                      "type": "uint32",
+                      "id": 8
+                    },
+                    "maxPacketSize": {
+                      "type": "uint32",
+                      "id": 9
+                    },
+                    "maxEncodedSize": {
+                      "type": "uint32",
+                      "id": 10
+                    },
+                    "timeout": {
+                      "type": "float",
+                      "id": 11
+                    }
+                  }
+                },
+                "RPCMeterConfig": {
+                  "fields": {
+                    "method": {
+                      "rule": "repeated",
+                      "type": "RPCMethodConfig",
+                      "id": 1,
+                      "options": {
+                        "packed": false
+                      }
+                    },
+                    "incomePerSecond": {
+                      "type": "uint32",
+                      "id": 2,
+                      "options": {
+                        "default": 1
+                      }
+                    },
+                    "initialBalance": {
+                      "type": "uint32",
+                      "id": 3
+                    },
+                    "capBalance": {
+                      "type": "uint32",
+                      "id": 4
+                    },
+                    "startupPeriod": {
+                      "type": "float",
+                      "id": 5,
+                      "options": {
+                        "default": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chat
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    messages go here.
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-input>
+      <input type="text" placeholder="Message..."/>
+    </ion-input>
+    <ion-buttons end>
+      <button end (click)="send($event)" ion-button icon-right color="royal">
+        Send
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

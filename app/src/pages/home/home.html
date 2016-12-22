@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to BattleChat</h2>
+  <p>
+  Please enter your battle.net account credentials to start chatting with your friends
+  </p>
+  <p>
+   This application is designed to talk only to official Blizzard(tm) servers - your data will not be used for anything
+    suspicious.
+  </p>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Game</ion-label>
+      <ion-select [(ngModel)]="game" cancelText="Cancel" okText="Select">
+        <ion-option value="d3">Diablo III</ion-option>
+        <ion-option value="hs">Hearthstone</ion-option>
+        <ion-option value="wow">WoW</ion-option>
+        <ion-option value="overwatch">Overwatch</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button (click)="signIn($event)" ion-button block>Sign In</button>
+    <p>
+      Blizzard requires to bind the current chat session to a game, please enter your game you want to use to sign in.
+      Notice that for some games you'll need to enter the CD-Key (we prefer HearthStone since it's free and does not require it).
+      (TODO: Check if its required to have the game installed once to use it as a chat realm.)
+    </p>
+  </div>
+</ion-content>
